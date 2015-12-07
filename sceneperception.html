@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>ScenePerception Test</title>
+  </head>
+  <style>
+      canvas {
+        width: 320px;
+        height: 240px;
+        border: 1px solid #000000;
+      }
+    </style>
+  <body>
+  <div style="margin-bottom:10px;">
+    <a id='quality'>Quality: </a>
+    <a id='accuracy'>Accuracy: </a>
+    <a id='reconstruction'>Reconsturction: </a>
+  </div>
+  <div style='margin-bottom:23px;'>
+    <button id='init'>Init</button>
+    <button id='destory'>Destory</button>
+    <button id='reset'>Reset</button>
+    <button id='startSP'>StartSP</button>
+    <button id='stopSP'>StopSP</button>
+    <button id='toggleReconstruction'>Toggle Reconstruction</button>
+  </div>
+  <div id='color_container' style='position: absolute; left: 10px; top: 90px;'>
+    <canvas id='color' width='320' height='240'></canvas>
+  </div>
+  <div id='depth_container' style='position: absolute; left: 10px; top: 340px'>
+    <canvas id='depth' width='320' height='240'></canvas>
+  </div>
+  <div id="rightRender" style='width: 640px; height: 480px; position: absolute; left: 350px; top: 90px'>
+    <input type="radio" id="volumePreviewRadio" name="renderRadio">Volume Preview</input>
+    <input type="radio" id="meshingRadio" name="renderRadio" checked>Meshing Reconstruction</input>
+    <div id='volumePreviewRender' style='position:absolut; left: 0px; top: 20px; display: none'>
+      <canvas id='volumePreview' width='320' height='240'></canvas>
+    </div>
+    <div id='meshingRender' style='width: 640px; height: 480px; position: absolute; left: 0px; top: 20px'></div>
+  </div>
+  </body>
+  <script src='libs/three.js'></script>
+  <script src='libs/TrackballControls.js'></script>
+  <script src="libs/stats.min.js"></script>
+  <script src="sceneperception.js"></script>
+  <script type="text/javascript">
+    window.onload = main();
+  </script>
+</html>

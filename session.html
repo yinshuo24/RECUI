@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>RealSense Session Test</title>
+  </head>
+  <body>
+    <p id='version'></p>
+  </body>
+  <script>
+    var versionElement = document.getElementById('version'); 
+    var session = new realsense.session();
+    session.getVersion().then(function(v) {versionElement.innerHTML = 'RealSense Version Major: ' + v.major + ' Minor: ' + v.minor;});
+  </script>
+</html>
